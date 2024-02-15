@@ -1,0 +1,106 @@
+Today's topics
+1. Complete pending work
+2. Sorting of elements in  Java
+3. Iterator , ListIterator , Exceptions associated.
+4. ArrayList Vs LinkedList
+
+
+Revise
+Collection Framework Overview
+What is it ? : Readymade implementation of dynamic data structures(List,Set,Map) + DSA(data structure algorithms) 
+
+Why ? : Supplies readymade implementations of  dynamic data structures. Supports insertion /deletion , searching /sorting , CRUD operations
+
+Inheritance Hierarchy
+(refer to diagram)
+
+Will you be able to create a populated AL using this ctor : ArrayList(Collection<E> coll)
+1. AL , LL , Vector
+2. HS, LHS,TS
+3. HM , LHM ,TM
+Ans : 1, 2
+
+Which of the following will cause a structural modification of the list?(modifying size)
+1. add /addAll
+2. remove / removeAll
+3. retainAll
+4. set
+Ans : 1,2,3
+
+eg : l1 : [1,2,3,4,5]
+l2 : [3,4]
+l1.retainAll(l2) => l1 : [3,4]
+
+What will be o/p ?
+list : [10,20,30,40,50,60]
+for (int i = 0; i < list.size(); i++) {
+ list.remove(i);
+}
+System.out.println("list after remove "+list);[20,40,60]
+------------------------------------------
+
+1. Complete pending objectives
+
+
+7. Apply discount to all vehicles manufactured before a specific date n color
+i/p :  date n color n discount
+Steps :
+Search criteria : date n color ---non PK based. 
+Can u use methods : contains / indexOf / lastIndexOf --- NO (since they invoke equals --which is 100 % based upon PK)
+Only way : for-each --search by date n color --setter for price
+
+8. Purchase a vehicle
+i/p : chasis no
+If valid , prompt for address n assign the delivery address.
+
+9. Display vehicle chasis no n price  , of all the vehicles dispatched to a specific city
+i/p : city
+Steps : search : city : non PK based criteria
+for-each ---if it's sold --no --no further chking
+yes -- match by city
+
+
+2. Sorting related objectives
+
+2.1  Sort vehicles as per chasis no (asc order)
+Natural Ordering
+
+2.2  Sort vehicle as per price (desc order)
+Custom ordering
+
+2.3  Sort vehicles as per date n price 
+Custom ordering
+
+
+Can you use anonymous inner class (a special variety of inner class) , to reduce the code , in above example ? YES
+2.2  Sort vehicle as per price (desc order)
+Custom ordering
+Steps :
+Collections.sort(vehicles , new Comparator<Vehicle>()
+{//ano inner cls begin
+ @Override
+ public int compare(Vehicle v1,Vehicle v2)
+ {
+   return ((Double)v2.getPrice()).compareTo(v1.getPrice());
+ }
+
+}//ano inner cls end
+);
+
+
+new Comparator<Vehicle>() => instance of the class (name will be javac supplied) that imple. Comaparator<Vehicle>
+
+
+
+
+3. Create a simple tester to understand :
+Iterator 
+
+-----------------Pending --------------------------
+
+ListIterator , Exceptions associated.
+
+4. ArrayList Vs LinkedList
+ 
+
+

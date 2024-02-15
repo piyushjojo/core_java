@@ -1,0 +1,53 @@
+Mandatory n optional part of the contract was followed in Emp class
+
+in emp's hashCode
+e1 added true
+in emp's hashCode
+e2 added true
+in emp's hashCode
+e3 added true
+in emp's hashCode
+e4 added true
+in emp's hashCode
+in emp equals
+e5 added false
+in emp's hashCode
+e6 added true
+size 5
+Emp [id=rnd-128, name=a2, salary=12345.0]
+Emp [id=rnd-130, name=b3, salary=22345.0]
+Emp [id=rnd-123, name=a1, salary=12345.0]
+Emp [id=rnd-125, name=a11, salary=12345.0]
+----------------------------------------------------------
+Only mandatory part of the contract was followed in Emp class
+
+in emp's hashCode
+e1 added true
+in emp's hashCode
+in emp equals
+e2 added true
+in emp's hashCode
+in emp equals
+in emp equals
+e3 added true
+in emp's hashCode
+in emp equals
+in emp equals
+in emp equals
+e4 added true
+in emp's hashCode
+in emp equals
+e5 added false
+in emp's hashCode
+in emp equals
+in emp equals
+in emp equals
+in emp equals
+e6 added true
+size 5
+Emp [id=rnd-123, name=a1, salary=12345.0]
+Emp [id=rnd-125, name=a11, salary=12345.0]
+Emp [id=rnd-124, name=b11, salary=22345.0]
+Emp [id=rnd-128, name=a2, salary=12345.0]
+Emp [id=rnd-130, name=b3, salary=22345.0]
+----------------------------------

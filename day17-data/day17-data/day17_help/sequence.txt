@@ -1,0 +1,87 @@
+Todays's topics 
+
+Continue with Java 8 functional streams
+I/O Programming
+
+
+
+Revise
+
+List<Customer> customers=populateList();//10 custs
+//display customer details
+customers.forEach(c -> sop(c)); , given PK : customer id
+//sort the customer details as per name
+customers.sort((c1,c2) -> c1.getName().compareTo(c2.getName()));
+customers.forEach(c -> sop(c));
+//remove the customers with silver plan
+boolean found=customers.removeIf(c -> c.getPlan() == SILVER);
+
+Func streams (Java 8 streams)
+src (array , collection : List n Set)
+intermediate ops (0....n-1)
+terminal op : 1
+
+Given : PK : customer id
+Map<Integer,Customer> map=populateMap();//10 entries : HashMap : un ordered , un sorted
+//display customer details : FP
+map.forEach((k,v) -> sop(v));
+//sort the customers as per customer id n display the details
+TreeMap<Integer,Customer> tm=new TreeMap<>(map);
+
+//sort the customers from the map : as per their dob n display the same.
+
+
+ I/O
+Which are  the packages for device handling  ? java.io , java.nio
+java.io : which type of methods ? read /write
+java.io API Blocking or non blocking ? Blocking API => Any read/write operation will cause blocking of the invoker thrd , until read/w op. is complete
+
+In case or read/write errors : java.io.IOException : chked exc
+
+java.io Consists  of : I/O streams
+What is a stream ? : data transfer medium (bytes/chars)
+Devices : console(stdin / stdout : System.in : InputStream  / System.out : PrintStream)
+File : File handling streams
+Pipe : pipe handling streams
+Socket : socket strms .....
+
+What will you use ?
+To read data from a data src ----> Java app : input stream
+To write data from a Java app ----> data sink  : output stream
+
+3 different categories of streams --- 
+node streams : device handling streams (meant for abstracting actual device handling from the prog)
+platform independent) : un buffered strms
+eg : FIS, FOS , FR ,FW , PIS,POS,PR,PW...., SIS : device specific
+Mandatory
+
+buffering streams :  in case large data transfer : independent of the device
+eg : BIS,BR,BOS,BW,PW
+
+Filtering / conversion streams : 
+To convert binary data (bytes) ---> prim types / objects
+eg : DIS,DOS,OOS,OIS...
+
+Which are 2 types of streams in java.io ?
+1. Byte oriented strms (binary)
+2. char oriented strms
+
+
+Which are 4 abstract super classes ? : InputStream, OutputStream,Reader,Writer
+
+File Handling Classes ? FIS,FOS,FR,FW
+
+
+
+Objectives : 
+How will you read text data file using buffer?
+Java App --- BR<-- FR <-----Text File
+BR br=new BR(new FR(fileName));
+Methods : readLine , lines : Stream<String>
+Stream : i/f => sequence of elems : to which one can apply pipeline of ops (eg : forEach,filter,map,sorted,collect, sum,average....)
+pkg : java.util.stream : Java 8 added
+
+How to copy files ?
+Java App --- BR<-- FR <-----Text File
+Java App ---> BW/PW ---> FW -- text file
+

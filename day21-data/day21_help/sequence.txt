@@ -1,0 +1,15 @@
+Assignment status ?
+
+1. ITC
+
+2. User vs Daemon Threads
+
+3. Reflection
+
+3.5 static synched methods : lab work
+
+4. Cloning
+
+5. JVM Architecture : pending
+
+6. JDBC : Testing DB connection : lab work

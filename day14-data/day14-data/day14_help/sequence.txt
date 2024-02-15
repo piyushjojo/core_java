@@ -1,0 +1,131 @@
+Today's Topics
+
+Hashing algorithm
+Map i/f & implementation classes
+New Features : Java 8 onwards
+Java 8 Date/Time Handling API
+
+
+1.Revise Sets overview
+(refer to diagram : "Regarding Sets.png")
+
+TreeSet<E> Ctors
+TreeSet() : N.O
+TreeSet(Collection<E> collection) : N.O 
+TreeSet(Comparator<E> comp) : C.O 
+Ways : a separate class OR ano inner class OR lambda expr.
+
+
+2. HashSet & hashing algorithm
+HS<String> : no problems ! (detecting the dups!)
+
+HS<Emp> 
+Any problems observed in EmpSet before overriding hashCode n equals ? Dups were not detected.
+
+What is the contract ? Contract exists between equals n hashCode methods
+Object class API 
+public boolean equals (Object o)
+public int hashCode()
+
+
+Contract : 
+Mandatory part : Equal objects MUST produce SAME hashcode.(sufficient to detect dups!)
+i.e in case of Emp : PK : emp id
+if e1.equals(e2) -- true , e1.hashCode() = e2.hashCode()
+
+
+Optional Part : Un equal objects SHOULD produce DIFFERENT hashcodes (for ensuring constant time performance O(1))
+i.e in case of Emp : PK : emp id
+if e1.equals(e2) -- false , e1.hashCode() != e2.hashCode()
+
+
+How to implement the both parts of the contract ?
+1. Identify PK -- override : equals
+2. Using SAME fields (PK members) : override hashCode
+
+
+
+What is hashing ?
+Hashing means using some function or algorithm to map object data(of variable length) to some representative integer value.
+
+Hashing algo. internals
+
+
+Objective ( lab work ): Emp : PK : composite PK
+id (string) n deptId (int) 
+Emps are same iff : id n deptId is same
+---------------------------------------------------
+
+
+3. Enter Maps
+
+Maps Overview
+Refer to Map API
+
+Objective : 
+BankAccount : acctNo(int) , customer name , type(enum) , creationDate(java.time.LocalDate) , balance
+PK : acct no
+
+
+3.1Store a/c details in a suitable map to ensure const time performance for : put/get/remove...
+What will the type of the map ? : HashMap<K,V>
+K : Integer
+V : BankAccount
+
+
+3.2  Create a populated map with sample data.
+
+3.3 Create A/C
+
+3.4 Display details of all accts
+
+3.6  Get A/C summary
+i/p : acct number
+
+3.7 Funds Transfer
+i/p : src a/c no  dest a/c no , amt
+
+3.8 Close A/C
+
+3.9 Display a/c holder's name of the specified type of the account. 
+
+3.10 Display balance of a/cs created between specific dates 
+----------------------------
+
+4. Java 8 Date/Time related APIs
+Java 8 New Features 
+java.time : new package is introduced
+LocalDate : Date (immutable)(yr-mon-day)  : inherently thrd safe.
+API 
+1. public static LocalDate now()
+Obtains the current date from the system clock in the default time-zone.
+eg : 
+LocalTime : Time (immutable)(hr-min-sec)  : inherently thrd safe.
+LocalDateTime : Date n Time :  inherently thrd safe.
+eg : sop("curnt date "+now());
+2. public static LocalDate of(int year,int month,int dayOfMonth)
+Obtains an instance of LocalDate from a year, month and day.
+eg : ?????
+3. public static LocalDate parse(CharSequence text)
+Obtains an instance of LocalDate from a text string such as 2007-12-03.
+eg : LocalDate dt=LocalDate.parse(sc.next());//0 based dates
+4. Methods :
+isBefore,isAfter,isEqual
+3. Can you change default Date format ? : YES
+
+6. Computing Age
+
+
+
+Example of strings having same hashcode
+Aa BB
+Ba CB 
+Ca DB
+Da EB
+BBBB AaBB AaAa BBAa
+FB Ea
+
+For more understanding , do refer to :
+1. https://www.scientecheasy.com/2020/11/internal-working-of-hashmap-in-java.html/
+2. https://dzone.com/articles/java8-hashmap-implementation-and-performance
+3. https://www.youtube.com/watch?v=c3RVW3KGIIE

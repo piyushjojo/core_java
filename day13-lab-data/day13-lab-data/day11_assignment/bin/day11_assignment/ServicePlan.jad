@@ -1,0 +1,59 @@
+// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   ServicePlan.java
+
+package day11_assignment;
+
+
+public final class ServicePlan extends Enum
+{
+
+    private ServicePlan(String s, int i, int planCharges)
+    {
+        super(s, i);
+        this.planCharges = planCharges;
+    }
+
+    public int getPlanCharges()
+    {
+        return planCharges;
+    }
+
+    public String toString()
+    {
+        return (new StringBuilder(String.valueOf(name()))).append("@").append(planCharges).toString();
+    }
+
+    public static ServicePlan[] values()
+    {
+        ServicePlan aserviceplan[];
+        int i;
+        ServicePlan aserviceplan1[];
+        System.arraycopy(aserviceplan = ENUM$VALUES, 0, aserviceplan1 = new ServicePlan[i = aserviceplan.length], 0, i);
+        return aserviceplan1;
+    }
+
+    public static ServicePlan valueOf(String s)
+    {
+        return (ServicePlan)Enum.valueOf(day11_assignment/ServicePlan, s);
+    }
+
+    public static final ServicePlan SILVER;
+    public static final ServicePlan GOLD;
+    public static final ServicePlan DIAMOND;
+    public static final ServicePlan PLATINUM;
+    private int planCharges;
+    private static final ServicePlan ENUM$VALUES[];
+
+    static 
+    {
+        SILVER = new ServicePlan("SILVER", 0, 500);
+        GOLD = new ServicePlan("GOLD", 1, 1000);
+        DIAMOND = new ServicePlan("DIAMOND", 2, 1500);
+        PLATINUM = new ServicePlan("PLATINUM", 3, 2000);
+        ENUM$VALUES = (new ServicePlan[] {
+            SILVER, GOLD, DIAMOND, PLATINUM
+        });
+    }
+}

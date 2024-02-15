@@ -1,0 +1,114 @@
+1. Create java  application  for student management.
+
+populate student details in a suitable data structure
+
+1. Display All students by the specified course name
+I/P -- course name
+O/P List of students from the specified course (Use lambda expression or method reference for display)
+
+2. Update Student details (update marks & phone number)
+I/Ps accepted from user -- id , new marks & new phone number.
+O/P --If student by specified id doesn't exist , throw custom exception (Student not found exception)
+Otherwise  values should be updated in a collection & give updations successful message.
+
+3. Cancel Student admission.
+I/P email
+O/P --If student by specified email doesn't exist , throw custom exception (Student not found exception)
+Otherwise  student record should be deleted .
+-------------------------------------------------------------------------
+2.
+
+Create  java  application called EmpService(using suitable data structure) . This application must provide following functionalities.
+
+1. Add Employee: id(unique), name, dob, hireDate, salary and department
+Add suitable validations
+Dup emp info should not be added
+
+2. View Employee: i/p id 
+O/P emp details or error message via catch block
+
+3. View Employees: Display all the employees in ascending order with respect to date of joining. 
+
+4. Delete Employee: i/p  id
+O/P emp details deleted message  or error message via catch block.
+
+Non-Functional Requirements:
+1. The application must use appropriate collection to save all the required information.
+2. Application must throw appropriate exceptions whenever necessary.
+3. Application must be created using appropriate layers.
+-------------------------------------------------------------------
+3. Write a program to enroll student in a course. 
+   StudentName:String,
+   StudentId: int (Auto Increment),
+   studentAge: int,
+   CourseList: List<String>
+   constraints- User should be able to enroll a course if RegistrationDate is Greater than currentdate.
+                duplicate entry is not allowed in course for user (Once per user per course)
+                show course wise userlist.
+ Persist student information in bin file using serialization & restore it with de-serialization
+
+----------------------------
+4. 
+Write a program to read binary file of volunteers atleast 10.
+   volunteer 
+               volunteerId:int,
+               vName:String,
+               Hobbies:List<String>
+               isAvailable:boolean
+               DOB:Date or LocalDate
+
+  Rules : User Should Be able to Update the Information of Voulenteer
+                While volunteer with having same name and same DOB is not allowed.
+                DOB of volunteer should not less than 1-1-1990 while adding new record
+                Show volunteers Who have Same Hobbies.
+               (i.e display volunteer details , who have interest(hobby) in child welfare) : Hint : group by hobbies.
+                Store Updated volunteer info in File.
+
+-------------------------
+5. 
+
+ Write a  Program to add product in product list. and store them in a binary file using serialization & restore it using de-serialization.
+   Product Id- int  Auto increment.
+   Productname-String,
+   ProductPrice-double,
+   expiryDate-Date or LocalDate
+   Constraints:- (validation rules)
+                 1. Prdoduct should be added if & only if  its expiry date is greater than current date.
+                2. Do not allow duplicate product(product with same name,and price will not be allowed)
+	In Tester application : 
+                 Retieve the products into a suitable collection when you start the application.
+Options :
+	   1. Display product list.
+                 2. Add new product (check for duplication as per the rule)
+	   3. Remove product by name.
+	   3. Exit (save suitable collection of products in bin file using serialization)
+               
+                 Use centeralized exception handling approach.
+-----------------------------
+
+6.
+ Write a program to Add Players in IPL team and store then in a binary file using serialization & retrieve using de-serilaization.
+   
+   PlayerName-String
+   PlayerId- Unique
+   Ranking- int.
+   Points- double
+
+   Constraints- 
+                Each Player's ranking should be between 1-5 while adding player in a team (suitable collection of players)
+                duplicate entry of player with same name & points is not allowed.
+                minimum 5 players and  Maximum 7 players is allowed.
+
+    From Tester application
+ 
+                 Retieve the players information  into a suitable collection when you start the application.
+Options : 
+  
+1. User Should be able to Populate IPL Players in a team with player details.          
+ 2. Display IPL Team (suitable collection of players)
+3. Remove the player by its id.
+4. Exit :  save player collection in bin file using serialization.
+
+ Use centralized exception handling approach.
+
+                         

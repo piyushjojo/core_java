@@ -1,0 +1,146 @@
+Today's Topics
+
+Revise data types in java
+
+JVM Architecture : overview (mainly memory areas)
+
+
+Class Programming , object creation ,reference types : with memory pics
+
+Intro to GC
+
+Packages n access specifiers n classpath
+
+Enter IDE
+
+More practice for building business logic.
+
+
+----------------------------------------------------------
+
+Revise data types in java
+Java Data Types : which 2 categories
+
+primitive types : value holders
+
+ref types : address holder
+Types of conversions in primitive data types
+widening(auto conversion / promotion) : who does it ? javac
+eg : long ---> float , int ---> float , byte--->double
+
+narrowing conversion : who does it ? prog
+eg : float --> long , double --> float....
+
+
+Answer this 
+What will data type of result of
+1. byte & byte : int
+2. byte & short : int
+3. short & short : int
+4. int & long : long
+5. float & long : float
+6. float & double : double
+7. byte/short/int....& double : double
+
+-------------------------------------------
+
+1. JVM Architecture overview
+1.1 refer : day1-data\day1_help\slides\JavaTut-slides.pdf (How it works)
+
+1.2 refer : day2-data\day2_help\diagrams\JVM Architecture
+
+
+2. Enter OOP
+refer to "regarding class n object"
+
+2.1 Encapsulation -- Class Programming 
+
+Objective --
+Create a class to represent 3D Box 
+class Box ---tight encapsulation(achieved by making all non static data members:instance vars private)
+state -- width,height , depth --- double : private 
+
+paramterized constr --3 arg constr.
+
+Instance Methods(=non static methods)
+1. To return Box details in String form (dimensions of Box)
+
+method declaration --- access specifier(private/default/protected/public) , ret type , name , args , throws clause
+
+method definition --body
+
+2. To return computed volume of the box.
+
+
+
+this --keyword in java
+"this" represents => current object reference
+Usages
+1. To un-hide instance variable from local variable.
+eg : this.width=width;
+
+2. To invoke constructor of the same class , from different constructor.
+eg : this(side,side,side);
+
+
+Create another class(for the purpose of separation)  : CreateBox --for  UI. 
+Add psvmain(..){...}
+Use scanner --to accept box dims from user, create box instance.
+display its details & volume.
+
+2.2 Regarding Garbage Collection : 
+refer to readme.
+
+
+solve :
+Box b1=new Box(1,2,3);
+Box b2=b1;
+Box b3=b1;
+b1=b2=b3=null;//How many objects are marked GC ? 1
+System.gc();
+
+2.3 Pointers vs java references
+
+Similarity -- Pointer & reference --hold an address to the object created on heap.
+Difference -- To add robustness to the language ,
+pointer arithmatic is not allowed in java.
+
+reference --- holds internal representation of address --
+
+eg : 
+int data =100;
+data++;
+Box b1=new Box(1,2,3);
+b1++; //javac err
+b1 += 10;//javac err
+String s=new String("hello");
+s++;//javac err
+
+
+Box b1;
+b1=new Emp(.....);//javac err
+
+
+3.  access specifiers 
+refer : diagrams\Access specifiers.png 
+ diagrams\understanding access specifiers
+
+4. Modify Box scenario
+Add Box class under : com.cdac.core package.
+Add CreateBox class under : com.cdac.tester package
+n test it. 
+
+-----------------------Pending ---------------------------
+
+5. enter IDE
+
+
+Add more functionality : (for additional business logic)
+
+1. Create Cubes
+
+
+2. Add a method to Box class to compare equality of 2 boxes & test it
+
+
+3. Add a method to Box class to return a new Box with modified offset dims & test it with the tester.

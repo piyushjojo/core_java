@@ -1,0 +1,143 @@
+Today's Topics
+Revise HashMap (refer to readme n code)
+Solve Pending objectives
+More in generics
+Java 8 New Features
+
+1. Revision 
+Why Hashing  ?
+
+Hashing is a technique to make things(CRUD , searching) more efficient by effectively narrowing down the search. 
+
+What is hashing?
+
+Hashing means using some function or algorithm to map object data to some representative integer value.
+
+This  hash code (or simply hash) can then be used as a way to narrow down our search when looking for the item in the hash-based data structure (eg : HashSet,LinkedHashSet,HashMap,LinkedHashMap,Hashtable...)
+
+If you want to add elements(refereneces) in hashing based data structure, which contract to be followed between equals n hashCode ?
+
+Mandatory part of the contract : Equal objects MUST produce SAME hashcode values
+
+Optional BUT Recommended part of the contract to ensure O(1) : Un Equal objects SHOULD produce DIFFERENT hashcode values
+
+
+HOW ?
+1. Identify PK n override equals
+2. Use same fields (PK) in generating hashcode.
+Hint : Use prime nos in generation of hash codes
+ eg : String , Wrapper class(Integer,Double....) , Date , LocalDate....
+: Have already followed contract(both of the branches)
+
+Revise Hashing Algo , using code.
+
+Solve Pending Objectives
+3.9 Display a/c holder's name of the specified type of the account.
+i/p :  ac type
+Since it's value based search criteria : will you be able to use any ready made Map func ? NO
+convert it : Map ---> Collection : values
+for-each
+
+3.10 Display balance of a/cs created between specific dates 
+i/p : start end date 
+Since it's value based search criteria : will you be able to use any ready made Map func ? NO
+convert it : Map ---> Collection : values
+for-each
+
+
+
+
+Refer to : generics sequence
+1. Refer to generic methods
+
+2. 
+Objective : Create a class GenericUtils , as a non generic class
+1. Add a static method to print elements of any numeric type of the List.
+eg : printList(List<Number> numList)
+Test cases :
+printList : List<Integer> , List<Double> , List<Float>........
+
+Can you find out any common super class in all of above classes ? 
+Try it out !
+Problem observed : YES ---javac error
+
+What does it mean ?
+Does inheritance in generics work in the same manner as learnt earlier : NO
+
+Wild card in generics comes to the rescue!
+Enter "?"
+What is it :  ? 
+It's a wild card in generic syntax. Can be replaced by ANY type.
+Represents any unknown type.
+
+
+
+Can "?"  be replaced by a parameterized type T : YES
+
+
+
+3. Add a static method to compute salary of Collection of emps / mgr/ salesmgr / tempworker.
+Refer to ready code.
+eg : invokeComputeSalary(...)
+Test cases : AL<Emp> , Vector<Worker> , LinkedList<Mgr>, HS<Mgr> , TS<SalesMgr>....
+
+Can you use ? (un bounded wild card ) for this : NO 
+Check it out...
+Will have to add upper bounded wild card.
+
+
+More Generic syntax :
+? : wild card in generic syntax (it can be replaced by ANY type) : un bounded wild card
+extends : Represents upper bound
+super : Represents lower bound
+? extends E : ANY type E or its sub type 
+? super E : E or its super type
+eg : ? extends Emp => Emp or it's sub type(Mgr,Worker.....)
+? super Mgr => Mgr or it's super type (Emp , Object)
+
+What will you use in above case ? 
+
+
+Solve this
+Refer to AL ctor
+public ArrayList​(Collection<? extends E> c)
+Q : If you want to create populated AL of Mgr , which of the follow. is legal 
+Meaning : You can created a populated AL of Mgr from ANY Collection(AL,LL,Vector,HS,LHS,TS) of ANY generic type of Mgr or it's sub type
+
+1. AL<Emp>
+2. LL<Mgr>
+3. Vector<SalesMgr>
+4. HS<Worker>
+5. LHS<TempWorker>
+6. TS<RnDMgr>
+7. HM<Integer,Emp> 
+Ans : 2 , 3 , 6
+
+
+
+4. Can you use sumIt3 method (having upper bound : extends) to add ANY number to the supplied set ? NO
+Why ????????????
+
+Is there any solution ?
+
+5. What if you need to both get the elements as well as add the elements in any collection ?
+----------------------
+
+Refer to "java8_new_features.txt"
+
+Refer to "regarding lambdas"
+
+Objectives
+
+
+1. Create your own functional interface n use it in lambda expression
+eg : Perform ANY arithmetic operation on 2 double values & return the result
+eg --add/multiply/subtract/divide....
+
+1.1 Create i/f : SAM => Functional i/f
+eg : Computable
+1.2 Create an i/f : ComputationUtils :  to add a static method
+to return  result of  ANY operation performed on 2 double operands
+1.3 Create a Tester n use it.
+
+

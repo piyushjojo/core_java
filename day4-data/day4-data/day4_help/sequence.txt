@@ -1,0 +1,104 @@
+Revision n Assignment status
+
+
+Today's topics
+Revise Array of references
+Enter Inheritance.
+Enter polymorphism 
+
+
+Revision
+
+1. What will happen ? 
+int value=5;
+Point2D[] points=new Point2D[3];//1 array obj.--cls : [Lcom.app.geometry.Point2D , obj : CP , len=3, 3 nulls
+for(Point2D p : points) //p=points[0],p=points[1],p=points[2]
+{
+ p=new Point2D(value,value+10);//Point2D cls , obj : CP , x=5 y=15
+ value++;
+}
+//how many objs for GC ? 3 Point2D 's objs
+//array : 3 nulls
+for(Point2D p : points)//p=points[0],p=points[1],p=points[2]
+ sop(p.show());//NPE
+
+4. Dynamic initialization of array
+int[] ints=/*new int[]*/ {10,20,30,40,50};
+mem pic : refer to whiteboard1
+
+5. Solve question from whiteboard1
+--------------------------------------------
+Enter Inheritance 
+refer to "readme inheritance_polymorphism.txt" from today's help.
+Person-Student-Faculty scenarion (constr invocation in inheritance hierarchy)
+
+Objectives 
+4.1 What is inheritance  n Why 
+4.2 Real life Examples 
+4.3 Types
+4.4 constr invocation in inheritance hierarchy
+super keyword
+Person-Student-Faculty scenario (constructor invocation in inheritance hierarchy)
+4.5 Show details : via toString : method overriding
+
+
+Objective : Arrange an event to invite students n faculties
+
+(eg : EventOrganizer app : tester --main / scanner)
+Prompt user for event capacity.
+Create suitable data structure to hold the participant details
+Options 
+1. Register Student : 
+2. Register Faculty : 
+3. Display participant details : for-each 
+10. Exit
+
+Details :
+
+What is inheritance ?
+Important part of OOP 
+Represents IS A relationship
+Higher hierarchy : super class
+lower hierarchy :sub class
+key word : extends
+eg : class Emp extends Object{....}
+class Mgr extends Emp {...}
+class SalesMgr extends Mgr {...}
+Universal super class : java.lang.Object
+
+Why : Reduces redundancy , increases re usability
+Types : single , multilevel  ,hierarchial , multiple (not supported) : ambiguity
+
+constr invocation in inheritance hierarchy : refer to diag.
+
+How to display details of student n faculty ?
+
+
+super keyword
+super keyword usages
+1. To invoke super cls constr (eg : super(fn,ln))
+2. To access super cls's accessible members (eg : super.toString())
+
+Important statements
+Sub class IS A super class + something more(addtional data members + methods) + something modofied(behaviour : methods : method overriding)
+
+
+Enter polymorphism : refer to readme inheritance poly.
+Refer to method overloading vs method overriding
+Identify the rules.
+Examples of method overloading : print / println methods
+
+Example of Method overriding
+Java Annotations
+eg : @Override annotation
+
+java.lang.Object : universal super class of all java classes
+public String toString() : rets F.Q cls Name @ hashcode
+What's the need of overriding toString : to replace hashCode returning version by actual object details
+
+
+1.  Upcasting
+With simple example :  Person , Student Faculty
+
+
+2. Apply the concepts in the Event Organizer app

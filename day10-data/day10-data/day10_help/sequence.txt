@@ -1,0 +1,52 @@
+Today's Topics
+HAS-A relationship
+Nested classes 
+Generics
+Collection Framework Overview
+
+
+Revision (through example)
+Add a new option in Showroom tester 
+3. Update base price of the vehicle
+i/p : chasis no n new  base price
+o/p : in case of valid chasis no , check if new base price is valid (as per the rules ) , update net price taking base price + color based cost.
+
+In case of any errors , display suitable error message (via custom exception) or in case of success , give suitable message.
+
+-----------------------
+
+1. Establish HAS-A relation between 
+Vehicle & DeliveryAddress
+(one to one association)
+
+Objective : Add Option in Tester
+Purchase Vehicle
+i/p : vehicle's chasis no 
+In case of valid chasis no , if the vehicle is not already sold , accept delivery address details & assign it to the vehicle.
+o/p : in case of invalid chasis no or vehicle already sold --throw custom exc
+o.w : assign delivery address &  give success message.
+
+Steps
+1. Create a separate class : DeliveryAddress -- city,state,country,zipCode
+constr , toString
+
+2. To establish association(containment) between Vehicle & DeliveryAddress 
+Add new state (instance var) : DeliveryAddress  
+Don't init it in the constr.(since delivery address should be assigned only  when customer purchases a vehicle)
+
+3. Add a method to link delivery address to a vehicle.
+
+4. Write a simple tester to test this form of association.
+Confirm :In this case ,  can a DeliveryAddress exist w/o a Vehicle ? YES
+If yes : how will you prevent it ? (i.e how to impose composition , so that DeliveryAddress CAN NOT exist w/o the enclosing instance of the Vehicle)
+
+
+
+2. Enter Nested classes
+
+
+3. Discuss rules of non static nested class (inner class)
+
+4. Generics
+
+5. Enter Collection Framework overview.
